@@ -1,8 +1,6 @@
 package model.DAO;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 
 /**
  *
@@ -20,6 +18,14 @@ public class Conexion {
         }
 
         return cnx;
+    }
+
+    public static void cerrar() throws SQLException {
+        
+        if (cnx != null) {
+            cnx.close();
+        }
+    
     }
 
 }
