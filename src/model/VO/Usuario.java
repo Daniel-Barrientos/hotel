@@ -2,19 +2,18 @@ package model.VO;
 
 /**
  *
- * @author Daniel Barrientos - 1152143
+ * @author Hp
  */
-public class UsuarioVO {
-
+public class Usuario {
     private String id;
     private String identificacion;
     private String nombre;
     private Integer edad;
 
-    public UsuarioVO() {
+    public Usuario() {
     }
-
-    public UsuarioVO(String id, String identificacion, String nombre, Integer edad) {
+    
+    public Usuario(String id, String identificacion, String nombre, Integer edad) {
         this.id = id;
         this.identificacion = identificacion;
         this.nombre = nombre;
@@ -52,5 +51,8 @@ public class UsuarioVO {
     public void setEdad(Integer edad) {
         this.edad = edad;
     }
-
+    
+    
+    
+    
 }

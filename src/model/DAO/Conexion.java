@@ -1,31 +1,29 @@
 package model.DAO;
 
-import java.sql.*;
-
 /**
  *
- * @author Daniel Barrientos - 1152143
+ * @author Hp
  */
+import java.sql.*;
+
 public class Conexion {
-
-    private static Connection cnx = null;
-
-    public static Connection obtener() throws ClassNotFoundException, SQLException {
-
-        if (cnx == null) {
+   private static Connection cnx = null;
+   public static Connection obtener() throws SQLException, ClassNotFoundException {
+      if (cnx == null) {
+         try {
             Class.forName("com.mysql.jdbc.Driver");
-            cnx = DriverManager.getConnection("jdbc:mysql://localhost/hotel", "root", " ");
-        }
-
-        return cnx;
-    }
-
-    public static void cerrar() throws SQLException {
-        
-        if (cnx != null) {
-            cnx.close();
-        }
-    
-    }
-
+            cnx = DriverManager.getConnection("jdbc:mysql://localhost/hotel", "root", "");
+         } catch (SQLException ex) {
+            throw new SQLException(ex);
+         } catch (ClassNotFoundException ex) {
+            throw new ClassCastException(ex.getMessage());
+         }
+      }
+      return cnx;
+   }
+   public static void cerrar() throws SQLException {
+      if (cnx != null) {
+         cnx.close();
+      }
+   }
 }

@@ -1,23 +1,22 @@
 package model.VO;
 
-import java.util.Date;
+import java.sql.Date;
 
 /**
  *
- * @author Daniel Barrientos - 1152143
+ * @author Hp
  */
-public class AlquilerVO {
-    
+public class Alquiler {
     private Integer id;
     private Integer cantidad;
     private Date fecha;
-    private UsuarioVO usuario;
-    private TipoHabitacionVO habitacion;
+    private Usuario usuario;
+    private Tipohabitacion habitacion;
 
-    public AlquilerVO() {
+    public Alquiler() {
     }
 
-    public AlquilerVO(Integer id, Integer cantidad, Date fecha, UsuarioVO usuario, TipoHabitacionVO habitacion) {
+    public Alquiler(Integer id, Integer cantidad, Date fecha, Usuario usuario, Tipohabitacion habitacion) {
         this.id = id;
         this.cantidad = cantidad;
         this.fecha = fecha;
@@ -49,23 +48,21 @@ public class AlquilerVO {
         this.fecha = fecha;
     }
 
-    public UsuarioVO getUsuario() {
+    public Usuario getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(UsuarioVO usuario) {
+    public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
 
-    public TipoHabitacionVO getHabitacion() {
+    public Tipohabitacion getHabitacion() {
         return habitacion;
     }
 
-    public void setHabitacion(TipoHabitacionVO habitacion) {
+    public void setHabitacion(Tipohabitacion habitacion) {
         this.habitacion = habitacion;
     }
-    
-    
     
     
 }
